@@ -1,7 +1,8 @@
 import pink from "@material-ui/core/colors/pink";
 import purple from "@material-ui/core/colors/purple";
+import { PaletteOptions } from "@material-ui/core";
 
-export const palette = {
+export const palette: PaletteOptions = {
     primary: {
         main: purple[300],
         dark: purple[400],

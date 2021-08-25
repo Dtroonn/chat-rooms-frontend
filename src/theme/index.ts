@@ -1,25 +1,9 @@
 import { createTheme } from "@material-ui/core";
+
 import { palette } from "./palette";
+import { componentsOverrides } from "./componentsOverrides";
 
 export const theme = createTheme({
     palette,
-    components: {
-        MuiButton: {
-            styleOverrides: {
-                root: {
-                    borderRadius: 20,
-                },
-            },
-        },
-        MuiLink: {
-            styleOverrides: {
-                root: {
-                    textDecoration: "none",
-                    "&:hover": {
-                        textDecoration: "underline",
-                    },
-                },
-            },
-        },
-    },
+    components: componentsOverrides(palette),
 });
