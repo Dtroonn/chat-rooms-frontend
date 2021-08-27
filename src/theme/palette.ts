@@ -6,11 +6,12 @@ export const palette: PaletteOptions = {
     primary: {
         main: purple[300],
         dark: purple[400],
-        light: purple[200],
+        light: purple[100],
+        "200": purple[200],
     },
     secondary: {
         main: pink[300],
         dark: pink[400],
-        light: pink[200],
+        light: pink[100],
     },
 };

@@ -2,15 +2,14 @@ body {
     margin: 0;
 }
 
-/* body,
+body,
 html,
 #root {
     height: 100%;
 }
 
-
 .App {
     width: 100%;
     min-height: 100%;
     overflow: hidden;
-} */
+}
