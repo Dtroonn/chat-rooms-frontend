@@ -1,11 +1,11 @@
-import { ThemeOptions } from '@material-ui/core';
+import { ThemeOptions } from "@material-ui/core";
 
-export const componentsOverrides = (palette: any): ThemeOptions['components'] => ({
+export const componentsOverrides = (palette: any): ThemeOptions["components"] => ({
     MuiAppBar: {
         styleOverrides: {
             root: {
                 borderRadius: 0,
-                backgroundColor: '#1f2d41',
+                backgroundColor: "#1f2d41",
             },
         },
     },
@@ -19,9 +19,9 @@ export const componentsOverrides = (palette: any): ThemeOptions['components'] =>
     MuiLink: {
         styleOverrides: {
             root: {
-                textDecoration: 'none',
-                '&:hover': {
-                    textDecoration: 'underline',
+                textDecoration: "none",
+                "&:hover": {
+                    textDecoration: "underline",
                 },
             },
         },
@@ -35,9 +35,6 @@ export const componentsOverrides = (palette: any): ThemeOptions['components'] =>
     },
 
     MuiList: {
-        defaultProps: {
-            disablePadding: true,
-        },
         styleOverrides: {
             root: {
                 padding: 18,
@@ -50,16 +47,16 @@ export const componentsOverrides = (palette: any): ThemeOptions['components'] =>
             root: {
                 borderRadius: 20,
                 padding: 16,
-                transition: 'all 0.4s ease-in-out 0s',
-                '&.Mui-selected': {
+                transition: "all 0.4s ease-in-out 0s",
+                "&.Mui-selected": {
                     background: `${palette.primary.light} !important`,
-                    '& svg ': {
+                    "& svg ": {
                         fill: palette.primary.dark,
                     },
                 },
-                '&:hover': {
+                "&:hover": {
                     background: palette.primary.light,
-                    '& svg ': {
+                    "& svg ": {
                         fill: palette.primary.dark,
                     },
                 },
