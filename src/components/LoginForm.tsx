@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useForm, SubmitHandler, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import LinkMUI from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import LinkMUI from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
 
 export interface ILoginFormValues {
     username: string;
@@ -15,14 +15,14 @@ export interface ILoginFormValues {
 }
 
 const validationSchema = yup.object().shape({
-    username: yup.string().required("Поле обязательно к заполнению"),
-    password: yup.string().required("Поле обязательно к заполнению"),
+    username: yup.string().required('Поле обязательно к заполнению'),
+    password: yup.string().required('Поле обязательно к заполнению'),
 });
 
 export const LoginForm: React.FC = () => {
     const { handleSubmit, control, formState } = useForm<ILoginFormValues>({
         resolver: yupResolver(validationSchema),
-        mode: "onChange",
+        mode: 'onChange',
     });
 
     const onSubmit: SubmitHandler<ILoginFormValues> = (data): void => {
@@ -40,7 +40,7 @@ export const LoginForm: React.FC = () => {
                         name="username"
                         margin="normal"
                         fullWidth
-                        variant="outlined"
+                        variant="standard"
                         label="Имя пользователя или почта *"
                         error={!!fieldState.error}
                         helperText={fieldState.error?.message}
@@ -61,7 +61,7 @@ export const LoginForm: React.FC = () => {
                         margin="normal"
                         fullWidth
                         type="password"
-                        variant="outlined"
+                        variant="standard"
                         label="Пароль *"
                         error={!!fieldState.error}
                         helperText={fieldState.error?.message}

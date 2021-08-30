@@ -30,7 +30,7 @@ export const LoginAndRegisterPage: React.FC = () => {
                         pt: 2,
                         pb: 4,
                     }}>
-                    <Avatar sx={{ backgroundColor: 'secondary.main', margin: 1 }}>
+                    <Avatar sx={{ backgroundColor: 'primary.main', margin: 1 }}>
                         <LockOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5">

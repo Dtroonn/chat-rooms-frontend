@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useForm, SubmitHandler, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import LinkMUI from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import LinkMUI from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
 
 export interface IRegisterFormValues {
     username: string;
@@ -17,22 +17,22 @@ export interface IRegisterFormValues {
 }
 
 const validationSchema = yup.object().shape({
-    username: yup.string().required("Поле обязательно к заполнению"),
+    username: yup.string().required('Поле обязательно к заполнению'),
     email: yup
         .string()
-        .email("Некорректный адрес эл. почты")
-        .required("Поле обязательно к заполнению"),
+        .email('Некорректный адрес эл. почты')
+        .required('Поле обязательно к заполнению'),
     password: yup
         .string()
-        .min(6, "Пароль должен содержать минимум 6 символов")
-        .required("Поле обязательно к заполнению"),
-    passwordConfirm: yup.string().oneOf([yup.ref("password"), null], "Пароли не совпадают"),
+        .min(6, 'Пароль должен содержать минимум 6 символов')
+        .required('Поле обязательно к заполнению'),
+    passwordConfirm: yup.string().oneOf([yup.ref('password'), null], 'Пароли не совпадают'),
 });
 
 export const RegisterForm: React.FC = () => {
     const { handleSubmit, control, trigger, formState } = useForm<IRegisterFormValues>({
         resolver: yupResolver(validationSchema),
-        mode: "onChange",
+        mode: 'onChange',
     });
 
     const onSubmit: SubmitHandler<IRegisterFormValues> = (data): void => {
@@ -51,7 +51,7 @@ export const RegisterForm: React.FC = () => {
                         name="username"
                         margin="normal"
                         fullWidth
-                        variant="outlined"
+                        variant="standard"
                         label="Имя пользователя *"
                         error={!!fieldState.error}
                         helperText={fieldState.error?.message}
@@ -70,7 +70,7 @@ export const RegisterForm: React.FC = () => {
                         name="email"
                         margin="normal"
                         fullWidth
-                        variant="outlined"
+                        variant="standard"
                         label="Почта *"
                         error={!!fieldState.error}
                         helperText={fieldState.error?.message}
@@ -91,14 +91,14 @@ export const RegisterForm: React.FC = () => {
                         margin="normal"
                         fullWidth
                         type="password"
-                        variant="outlined"
+                        variant="standard"
                         label="Пароль *"
                         error={!!fieldState.error}
                         helperText={fieldState.error?.message}
                         value={field.value}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                             field.onChange(e.currentTarget.value);
-                            trigger("passwordConfirm");
+                            trigger('passwordConfirm');
                         }}
                     />
                 )}
@@ -114,7 +114,7 @@ export const RegisterForm: React.FC = () => {
                         margin="normal"
                         fullWidth
                         type="password"
-                        variant="outlined"
+                        variant="standard"
                         label="Подтвердите пароль *"
                         error={!!fieldState.error}
                         helperText={fieldState.error?.message}
