@@ -4,7 +4,7 @@ import Container from "@material-ui/core/Container";
 
 export const RoomPage: React.FC = () => {
     return (
-        <Container sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
+        <Container maxWidth="xl">
             <Chat />
         </Container>
     );

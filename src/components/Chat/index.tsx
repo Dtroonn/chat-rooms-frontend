@@ -4,25 +4,25 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import { UsersList } from "./UsersList";
 import Divider from "@material-ui/core/Divider";
-import { Messages } from "./Messages";
+import { MessagesBlock } from "./MessagesBlock";
 import Typography from "@material-ui/core/Typography";
 import { styled } from "@material-ui/core/styles";
+import { AddMessageForm } from "./AddMessageForm";
 
 export const Chat: React.FC = () => {
     return (
         <Paper
             elevation={8}
             sx={{
-                overflow: "hidden",
-                mb: 3,
                 height: "calc(100vh - 124px)",
+                overflow: "hidden",
             }}>
-            <Grid container sx={{ height: "100%" }}>
-                <Grid item container xs={4}>
+            <Grid container sx={{ height: "100%", flexWrap: "nowrap" }}>
+                <Grid item container sx={{ flex: "0 0 320px", height: "100%" }}>
                     <UsersList />
                 </Grid>
                 <Divider orientation="vertical" flexItem />
-                <Grid item flexGrow={1}>
+                <Grid item sx={{ flexGrow: 1, height: "100%", flexDirection: "column" }} container>
                     <StyledChatHeader>
                         <Typography variant="subtitle2">Название комнаты</Typography>
                         <Typography color="gray" variant="body2">
@@ -30,7 +30,8 @@ export const Chat: React.FC = () => {
                         </Typography>
                     </StyledChatHeader>
                     <Divider />
-                    <Messages />
+                    <MessagesBlock />
+                    <AddMessageForm />
                 </Grid>
             </Grid>
         </Paper>
