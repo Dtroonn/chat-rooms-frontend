@@ -8,14 +8,19 @@ import Container from "@material-ui/core/Container";
 import { ProfileMenu } from "./ProfileMenu";
 import { Typography } from "@material-ui/core";
 import { styled } from "@material-ui/core/styles";
+import { useSelector } from "react-redux";
+
+import { authSelectors } from "redux/ducks/auth/selectors";
 
 export const Header = () => {
+    const isAuth = useSelector(authSelectors.isAuth);
+
     return (
         <AppBar>
             <Container maxWidth="xl">
                 <Toolbar>
                     <div style={{ marginLeft: "auto" }}>
-                        {true ? (
+                        {isAuth ? (
                             <ProfileMenu />
                         ) : (
                             <LoginLink to="/login">

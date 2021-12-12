@@ -8,7 +8,6 @@ import Avatar from "@material-ui/core/Avatar";
 
 import { Message } from "./Message";
 import PerfectScrollbar from "react-perfect-scrollbar";
-import { Button } from "@material-ui/core";
 
 const items = [
     {
@@ -67,7 +66,7 @@ const items = [
     },
 ];
 
-const socket = io("http://localhost:5555");
+// const socket = io("http://localhost:5555");
 
 export const MessagesBlock: React.FC = () => {
     const [messages, setMessages] = React.useState(items);

@@ -8,7 +8,6 @@ import { styled } from "@material-ui/core/styles";
 import SendIcon from "@material-ui/icons/Send";
 
 import "react-perfect-scrollbar/dist/css/styles.css";
-import PerfectScrollbar from "react-perfect-scrollbar";
 
 export const AddMessageForm: React.FC = () => {
     return (

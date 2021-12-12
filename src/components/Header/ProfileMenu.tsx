@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 
-import IconButton from '@material-ui/core/IconButton';
-import ExitIcon from '@material-ui/icons/ExitToApp';
-import PersonIcon from '@material-ui/icons/Person';
-import Avatar from '@material-ui/core/Avatar';
-import Grow from '@material-ui/core/Grow';
-import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import Typography from '@material-ui/core/Typography';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import Divider from '@material-ui/core/Divider';
+import IconButton from "@material-ui/core/IconButton";
+import ExitIcon from "@material-ui/icons/ExitToApp";
+import PersonIcon from "@material-ui/icons/Person";
+import Avatar from "@material-ui/core/Avatar";
+import Grow from "@material-ui/core/Grow";
+import Paper from "@material-ui/core/Paper";
+import Popper from "@material-ui/core/Popper";
+import MenuItem from "@material-ui/core/MenuItem";
+import MenuList from "@material-ui/core/MenuList";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import Typography from "@material-ui/core/Typography";
+import ListSubheader from "@material-ui/core/ListSubheader";
+import Divider from "@material-ui/core/Divider";
 
 export const ProfileMenu = () => {
     const [open, setOpen] = React.useState(false);
@@ -50,7 +50,7 @@ export const ProfileMenu = () => {
                     <Grow
                         {...TransitionProps}
                         style={{
-                            transformOrigin: 'left right',
+                            transformOrigin: "left right",
                         }}>
                         <Paper>
                             <ClickAwayListener onClickAway={handleClose}>
@@ -61,7 +61,7 @@ export const ProfileMenu = () => {
                                             sx={{ mb: 1 }}
                                             component="div">
                                             <Typography sx={{ mb: 1, fontWeight: 500 }}>
-                                                Вы авторизованы как{' '}
+                                                Вы авторизованы как{" "}
                                                 <Typography
                                                     fontWeight="inherit"
                                                     component="span"

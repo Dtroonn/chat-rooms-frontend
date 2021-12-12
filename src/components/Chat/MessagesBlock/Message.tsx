@@ -20,6 +20,7 @@ export const Message: React.FC<any> = React.memo(
             }
             console.log("did update", fullname);
         }, [fullname]);
+
         return (
             <StyledMessage>
                 {/* {false && (
