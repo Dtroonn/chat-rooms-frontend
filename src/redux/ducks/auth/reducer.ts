@@ -9,6 +9,7 @@ const initialState: IAuthState = {
     checkAuthloadingStatus: "NEVER",
     loginLoadingStatus: "NEVER",
     mailConfirmLoadingStatus: "NEVER",
+    registerLoadingStatus: "NEVER",
 };
 
 export const authReducer = produce((draft: Draft<IAuthState>, action: AuthActions) => {
@@ -34,6 +35,9 @@ export const authReducer = produce((draft: Draft<IAuthState>, action: AuthAction
             break;
         case AuthActionsType.SET_MAIL_CONFIRM_LOADING_STATUS:
             draft.mailConfirmLoadingStatus = action.payload;
+            break;
+        case AuthActionsType.FETCH_REGISTER:
+            draft.registerLoadingStatus = "LOADING";
             break;
         default:
             break;

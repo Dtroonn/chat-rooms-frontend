@@ -3,10 +3,16 @@ import {
     setUser,
     setCheckAuthLoadingStatus,
     setMailConfirmLoadingStatus,
+    setRegisterLoadingStatus,
 } from "./actions";
 import { AuthService, IAuthResponse } from "services/AuthService";
 import { takeEvery, call, put } from "redux-saga/effects";
-import { AuthActionsType, IFetchLoginAction, IFetchMailConfirmAction } from "./contracts/actions";
+import {
+    AuthActionsType,
+    IFetchLoginAction,
+    IFetchMailConfirmAction,
+    IFetchRegisterAction,
+} from "./contracts/actions";
 
 export function* loginAsync({ payload }: IFetchLoginAction): any {
     try {
@@ -35,7 +41,6 @@ export function* checkAuthAsync() {
 
 export function* mailConfirmAsync({ payload }: IFetchMailConfirmAction) {
     try {
-        console.log("ПОПАЛ В САГУ:");
         const data: IAuthResponse = yield call(AuthService.confirmMail, payload);
 
         localStorage.setItem("token", data.accessToken);
@@ -46,8 +51,14 @@ export function* mailConfirmAsync({ payload }: IFetchMailConfirmAction) {
     } catch (e) {}
 }
 
+export function* registerAsync({ payload }: IFetchRegisterAction) {
+    yield call(AuthService.register, payload);
+    yield put(setRegisterLoadingStatus("SUCCESS"));
+}
+
 export function* watchAuthAsync() {
     yield takeEvery(AuthActionsType.FETCH_LOGIN, loginAsync);
     yield takeEvery(AuthActionsType.FETCH_CHECK_AUTH, checkAuthAsync);
     yield takeEvery(AuthActionsType.FETCH_MAIL_CONFIRM, mailConfirmAsync);
+    yield takeEvery(AuthActionsType.FETCH_REGISTER, registerAsync);
 }

@@ -1,4 +1,5 @@
 import { ILoginFormValues } from "components/LoginForm";
+import { IRegisterFormValues } from "components/RegisterForm";
 import { LoadingStatus } from "redux/contracts/loadingStatus";
 import {
     AuthActionsType,
@@ -10,6 +11,8 @@ import {
     ISetLoginLoadingStatusAction,
     ISetUserAction,
     ISetMailConfirmLoadingStatusAction,
+    IFetchRegisterAction,
+    ISetRegisterLoadingStatusAction,
 } from "./contracts/actions";
 import { IUser, LoginLoadingStatus } from "./contracts/state";
 
@@ -55,4 +58,16 @@ export const setMailConfirmLoadingStatus = (
 
 export const fetchVerifyMail = (): IFetchVerifyMailAction => ({
     type: AuthActionsType.FETCH_VERIFY_MAIL,
+});
+
+export const fetchRegister = (payload: IRegisterFormValues): IFetchRegisterAction => ({
+    type: AuthActionsType.FETCH_REGISTER,
+    payload,
+});
+
+export const setRegisterLoadingStatus = (
+    payload: LoadingStatus,
+): ISetRegisterLoadingStatusAction => ({
+    type: AuthActionsType.SET_REGISTER_LOADING_STATUS,
+    payload,
 });

@@ -14,4 +14,5 @@ export interface IAuthState {
     checkAuthloadingStatus: LoadingStatus;
     loginLoadingStatus: LoginLoadingStatus;
     mailConfirmLoadingStatus: LoadingStatus;
+    registerLoadingStatus: LoadingStatus;
 }

@@ -36,3 +36,12 @@ export const isSuccessMailConfirmStatus = (state: RootState) =>
 
 export const isErrorMailConfirmStatus = (state: RootState) =>
     authState(state).mailConfirmLoadingStatus === "ERROR";
+
+export const isLoadingRegisterStatus = (state: RootState) =>
+    authState(state).registerLoadingStatus === "LOADING";
+
+export const isSuccessRegisterStatus = (state: RootState) =>
+    authState(state).registerLoadingStatus === "SUCCESS";
+
+export const isErrorRegisterStatus = (state: RootState) =>
+    authState(state).registerLoadingStatus === "ERROR";

@@ -44,10 +44,8 @@ function App() {
 
     return (
         <div className="App">
-            <h1>ВСЕМ ПРИВЕТ</h1>
             <Header />
-            <main style={{ paddingTop: 50 }}>
-                {/* @ts-ignore */}
+            <main style={{ paddingTop: 70 }}>
                 <Switch>
                     <Route exact path="/" component={HomePage} />
                     <AuthRoute isAuth={isAuth} exact path="/room">
