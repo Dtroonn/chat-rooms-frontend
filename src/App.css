@@ -21,16 +21,3 @@ main {
     display: flex;
     flex-direction: column;
 }
-
-.svg::before {
-    content: "";
-    display: block;
-    width: 22px;
-    height: 22px;
-    background: url("./assets/bank.svg") no-repeat;
-    background-size: 22px auto;
-    position: absolute;
-    top: 17px;
-    left: 13px;
-    background-position: 0;
-}

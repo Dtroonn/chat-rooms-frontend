@@ -1,13 +1,9 @@
+import axios from "axios";
+
 import { ILoginFormValues } from "components/LoginForm";
 import { IRegisterFormValues } from "components/RegisterForm";
 import { $axios } from "core/axios";
-import { IUser } from "redux/ducks/auth/contracts/state";
-
-export interface IAuthResponse {
-    accessToken: string;
-    refreshToken: string;
-    user: IUser;
-}
+import { IAuthResponse } from "./types";
 
 export class AuthService {
     static async login(data: ILoginFormValues): Promise<IAuthResponse> {
@@ -17,7 +13,7 @@ export class AuthService {
     }
 
     static async refresh(): Promise<IAuthResponse> {
-        const response = await $axios.get<IAuthResponse>("auth/refresh");
+        const response = await axios.get<IAuthResponse>("auth/refresh");
 
         return response.data;
     }

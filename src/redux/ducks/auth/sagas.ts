@@ -5,7 +5,7 @@ import {
     setMailConfirmLoadingStatus,
     setRegisterLoadingStatus,
 } from "./actions";
-import { AuthService, IAuthResponse } from "services/AuthService";
+import { AuthService } from "services/AuthService";
 import { takeEvery, call, put } from "redux-saga/effects";
 import {
     AuthActionsType,
@@ -13,6 +13,7 @@ import {
     IFetchMailConfirmAction,
     IFetchRegisterAction,
 } from "./contracts/actions";
+import { IAuthResponse } from "services/AuthService/types";
 
 export function* loginAsync({ payload }: IFetchLoginAction): any {
     try {
